@@ -1,0 +1,19 @@
+{
+  "name": "campus-access-passage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "园区无障碍通行：版本化路网维护、临时封闭与无台阶路线查询",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "NODE_ENV=development node server/index.js",
+    "build:client": "npm --prefix client run build"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

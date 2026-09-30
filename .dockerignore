@@ -1,0 +1,11 @@
+node_modules
+client/node_modules
+client/dist
+data
+*.db
+*.db-wal
+*.db-shm
+.git
+npm-debug.log
+Dockerfile
+docker-compose.yml

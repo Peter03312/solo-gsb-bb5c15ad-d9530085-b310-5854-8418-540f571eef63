@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: campus-access
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DATA_DIR: /app/data
+    volumes:
+      - campus-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  campus-data:

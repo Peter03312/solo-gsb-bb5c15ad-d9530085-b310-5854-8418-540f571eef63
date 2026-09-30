@@ -1,0 +1,81 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+.app { max-width: 1080px; margin: 0 auto; padding: 16px; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 2px solid #2c7a4b;
+  padding-bottom: 8px;
+}
+
+h1 { font-size: 22px; margin: 8px 0; color: #2c7a4b; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; margin: 8px 0; }
+
+nav { display: flex; gap: 4px; }
+
+.tab {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+}
+.tab.active { background: #2c7a4b; color: #fff; border-color: #2c7a4b; }
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+.form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.form label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.form .checkbox { flex-direction: row; align-items: center; gap: 6px; }
+
+input, select {
+  padding: 6px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 7px 14px;
+  border: 1px solid #2c7a4b;
+  background: #fff;
+  color: #2c7a4b;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { background: #eef6f0; }
+button.primary { background: #2c7a4b; color: #fff; }
+button.danger { border-color: #b3352b; color: #b3352b; }
+button:disabled { opacity: 0.5; cursor: default; }
+
+table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 14px; }
+th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; }
+th { background: #f0f4f1; }
+
+.alert { padding: 10px 14px; border-radius: 6px; margin: 10px 0; }
+.alert.ok { background: #e5f4ea; border: 1px solid #2c7a4b; }
+.alert.error { background: #fdecea; border: 1px solid #b3352b; }
+.alert ul { margin: 6px 0 0; }
+
+.hint { color: #666; font-size: 13px; }
+.muted { color: #999; }
+.actions { display: flex; gap: 10px; margin: 12px 0; }
