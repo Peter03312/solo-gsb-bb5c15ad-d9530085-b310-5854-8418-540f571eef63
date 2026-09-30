@@ -1,0 +1,19 @@
+{
+  "name": "access-park",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "园区无障碍通行 Web 应用（Node.js + React + SQLite）",
+  "scripts": {
+    "install:all": "npm install && npm --prefix frontend install",
+    "initdb": "node server/initdb.js",
+    "build": "npm --prefix frontend run build",
+    "dev:server": "node --watch server/index.js",
+    "dev:web": "npm --prefix frontend run dev",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  }
+}

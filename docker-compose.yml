@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    image: access-park:latest
+    container_name: access-park
+    ports:
+      # 宿主机端口:容器端口；可通过环境变量 WEB_PORT 修改宿主机端口
+      - "${WEB_PORT:-8080}:8080"
+    environment:
+      # SQLite 数据库文件目录（容器内路径，持久化到命名卷）
+      DATA_DIR: /app/data
+      # 监听端口（容器内，一般无需修改）
+      PORT: "8080"
+      # 空库启动时是否写入示例路网：true/false
+      SEED_SAMPLE: "true"
+      # 寻路搜索时间窗（分钟）：出发后多久内必须到达，否则报“无可行路线”
+      ROUTE_HORIZON_MINUTES: "1440"
+      TZ: Asia/Shanghai
+    volumes:
+      - park-data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  park-data:
